@@ -35,4 +35,7 @@ describe DockingStation do
     expect { subject.dock(Bike.new) }.to raise_error "Capacity is full"
   end
 
+  it "allows a capacity to be set when a docking station is created" do
+    expect(DockingStation.new(30)).to be_truthy
+  end
 end
