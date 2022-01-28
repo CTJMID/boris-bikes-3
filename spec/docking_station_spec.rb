@@ -42,4 +42,7 @@ describe DockingStation do
   it "gives a default capacity of 20 when no other capacity is given" do 
     expect(subject.capacity).to eq(20)
   end
+
+    it { is_expected.to respond_to(:report_broken).with(1).argument }
+
 end

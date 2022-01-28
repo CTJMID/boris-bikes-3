@@ -21,6 +21,10 @@ class DockingStation
     @bikes_in_station.push(bike)   
   end
 
+  def report_broken(bike)
+        
+  end
+
   private
 
   def full?
