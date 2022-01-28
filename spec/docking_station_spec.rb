@@ -38,4 +38,8 @@ describe DockingStation do
   it "allows a capacity to be set when a docking station is created" do
     expect(DockingStation.new(30)).to be_truthy
   end
+
+  it "gives a default capacity of 20 when no other capacity is given" do 
+    expect(subject.capacity).to eq(20)
+  end
 end
