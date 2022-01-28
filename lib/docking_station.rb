@@ -14,16 +14,13 @@ class DockingStation
   
   def release_bike
     fail 'There are no bikes' if self.empty?
-
-    # if bike == @broken_bike
-    #   "You have docked a broken bike"
-    # end
-   
+    working_bikes = []
     @bikes_in_station.each do |bike|
-      if @broken_bikes.include?(bike)
-        
+      unless @broken_bikes.include?(bike)
+      working_bikes << bike
       end
     end
+    working_bikes.pop
   end
 
   def dock(bike)
@@ -32,7 +29,7 @@ class DockingStation
   end
 
   def report_broken(bike)
-    working? = false
+    #working? = false
     @broken_bikes << bike
   end
 
