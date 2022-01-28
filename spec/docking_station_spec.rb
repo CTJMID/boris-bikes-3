@@ -44,5 +44,12 @@ describe DockingStation do
   end
 
     it { is_expected.to respond_to(:report_broken).with(1).argument }
-
+  
+  it "doesn't release a bike that is broken" do
+    broken_bike = Bike.new
+    subject.report_broken(broken_bike)
+    subject.dock(broken_bike)
+    expect(subject.release_bike).to eq nil
+  end
+  
 end
